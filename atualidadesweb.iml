@@ -19,6 +19,7 @@
     <orderEntry type="library" name="com.pivotallabs:robolectric:1.2" level="project" />
     <orderEntry type="jdk" jdkName="Android 4.2 Platform" jdkType="Android SDK" />
     <orderEntry type="library" name="com.github.kevinsawicki:http-request:4.2" level="project" />
+    <orderEntry type="library" name="org.roboguice:roboguice:2.0" level="project" />
   </component>
 </module>
 

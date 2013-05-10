@@ -8,26 +8,26 @@ import android.widget.ListView;
 import br.com.atualidadesweb.R;
 import br.com.atualidadesweb.domain.News;
 import br.com.atualidadesweb.services.NewsService;
+import com.google.inject.Inject;
+import roboguice.activity.RoboActivity;
+import roboguice.inject.ContentView;
+import roboguice.inject.InjectView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class TimeLineActivity extends Activity {
+@ContentView(R.layout.main)
+public class TimeLineActivity extends RoboActivity {
 
-    private NewsService newsService;
+    @Inject private NewsService newsService;
+    @InjectView(R.id.news) private ListView listView;
+
     private List<String> items = new ArrayList<String>();
-    private ListView listView;
-
-    public TimeLineActivity(NewsService newsService) {
-        this.newsService = newsService;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
 
-        this.listView = (ListView)findViewById(R.id.news);
         this.listView.setAdapter(this.createAdapter());
 
         List<News> news = this.newsService.getNews();

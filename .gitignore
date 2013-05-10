@@ -1,4 +1,5 @@
-morseflash-app/project.properties
+project.properties
+*.idea/workspace.xml
 
 target
 *.swp
