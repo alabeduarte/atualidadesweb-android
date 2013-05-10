@@ -1,0 +1,25 @@
+<component name="libraryTable">
+  <library name="com.pivotallabs:robolectric:1.2" type="repository">
+    <properties maven-id="com.pivotallabs:robolectric:1.2" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/robolectric-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/hamcrest-core-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/junit-dep-4.8.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/objenesis-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/sqlite-jdbc-3.7.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javassist-3.14.0-GA.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-logging-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-codec-1.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/httpclient-4.0.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/httpcore-4.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/android-4.1.1.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/opengl-api-gl1.1-android-2.1_r1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/xmlParserAPIs-2.6.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/xpp3-1.1.4c.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/json-20080701.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/support-v4-r6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

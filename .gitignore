@@ -1,0 +1,13 @@
+morseflash-app/project.properties
+
+target
+*.swp
+*.swo
+*.iws
+*.ipr
+*.iml
+.settings
+.classpath
+.project
+.idea
+.DS_Store
