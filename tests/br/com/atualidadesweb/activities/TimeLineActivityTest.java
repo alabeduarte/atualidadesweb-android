@@ -2,7 +2,6 @@ package br.com.atualidadesweb.activities;
 
 import android.app.Application;
 import android.content.Context;
-import android.os.Vibrator;
 import android.widget.ListView;
 import br.com.atualidadesweb.R;
 import br.com.atualidadesweb.domain.News;
@@ -17,7 +16,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import roboguice.RoboGuice;
-import roboguice.activity.RoboActivity;
 
 import java.util.Arrays;
 

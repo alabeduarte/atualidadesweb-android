@@ -1,7 +1,7 @@
 project.properties
-*.idea/workspace.xml
 
 target
+*.class
 *.swp
 *.swo
 *.iws
@@ -12,3 +12,7 @@ target
 .project
 .idea
 .DS_Store
+
+.idea/workspace.xml
+out
+tmp
