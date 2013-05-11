@@ -25,9 +25,6 @@ import static org.mockito.Mockito.*;
 
 @RunWith(RobolectricTestRunner.class)
 public class TimeLineActivityTest {
-    @Mock Application application;
-    @Mock Context context;
-
     @Mock News aNews;
     @Mock NewsService newsService;
 
@@ -36,28 +33,15 @@ public class TimeLineActivityTest {
         initMocks(this);
         when(aNews.getTitle()).thenReturn("A some news");
         when(newsService.getNews()).thenReturn(Arrays.asList(aNews));
-
-        when(context.getApplicationContext()).thenReturn(application);
-        when(application.getApplicationContext()).thenReturn(application);
-
-        RoboGuice.setBaseApplicationInjector(application, RoboGuice.DEFAULT_STAGE, Modules.override(RoboGuice.newDefaultRoboModule(application)).with(new MyTestModule()));
-    }
-
-    @After
-    public void tearDown() {
-        RoboGuice.util.reset();
     }
 
     @Test
     public void shouldRenderListOfNews() {
-        final TimeLineActivity timeLineActivity = RoboGuice.getInjector(context).getInstance(TimeLineActivity.class);
+        TimeLineActivity timeLineActivity = new TimeLineActivity();
         timeLineActivity.onCreate(null);
 
         ListView listView = (ListView) timeLineActivity.findViewById(R.id.news);
         assertEquals(1, listView.getAdapter().getCount());
     }
 
-    public class MyTestModule extends AbstractModule {
-        @Override protected void configure() { bind(NewsService.class).toInstance(newsService); }
-    }
 }

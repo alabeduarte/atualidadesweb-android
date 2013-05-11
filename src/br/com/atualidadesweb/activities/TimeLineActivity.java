@@ -28,11 +28,13 @@ public class TimeLineActivity extends RoboActivity {
         super.onCreate(savedInstanceState);
 
         this.listView.setAdapter(this.createAdapter());
-
+        this.items.add("");
+        /*
         List<News> news = this.newsService.getNews();
         for (News aNews: news) {
             this.items.add(aNews.getTitle());
         }
+        */
     }
 
     private BaseAdapter createAdapter() {
