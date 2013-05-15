@@ -4,9 +4,9 @@ package br.com.atualidadesweb.activities;
 import android.widget.ListView;
 import br.com.atualidadesweb.R;
 import br.com.atualidadesweb.domain.News;
-import br.com.atualidadesweb.injection.InjectedTestRunner;
 import br.com.atualidadesweb.injection.TestGuiceModule;
 import br.com.atualidadesweb.services.NewsService;
+import com.xtremelabs.robolectric.RobolectricTestRunner;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,7 +19,7 @@ import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
-@RunWith(InjectedTestRunner.class)
+@RunWith(RobolectricTestRunner.class)
 public class TimeLineActivityTest {
     @Mock NewsService newsServiceMock;
     TimeLineActivity timeLineActivity;

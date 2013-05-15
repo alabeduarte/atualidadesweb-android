@@ -24,7 +24,6 @@ public class TestGuiceModule extends AbstractModule {
     @Override
     @SuppressWarnings("unchecked")
     protected void configure() {
-        //bind(Activity.class).toProvider(NewsServiceProvider.class).in(ContextSingleton.class);
         Set<Map.Entry<Class<?>, Object>> entries = bindings.entrySet();
         for (Map.Entry<Class<?>, Object> entry : entries) {
             bind((Class<Object>) entry.getKey()).toInstance(entry.getValue());
@@ -37,8 +36,7 @@ public class TestGuiceModule extends AbstractModule {
 
     public static void setUp(Object testObject, TestGuiceModule module) {
         Module roboGuiceModule = RoboGuice.newDefaultRoboModule(Robolectric.application);
-        Module productionModule = Modules.override(roboGuiceModule).with(new AtualidadesWebModule());
-        Module testModule = Modules.override(productionModule).with(module);
+        Module testModule = Modules.override(roboGuiceModule).with(module);
         RoboGuice.setBaseApplicationInjector(Robolectric.application, RoboGuice.DEFAULT_STAGE, testModule);
         RoboInjector injector = RoboGuice.getInjector(Robolectric.application);
         injector.injectMembers(testObject);
