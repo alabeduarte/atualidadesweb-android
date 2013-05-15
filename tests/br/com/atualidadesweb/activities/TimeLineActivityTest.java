@@ -5,7 +5,9 @@ import android.widget.ListView;
 import br.com.atualidadesweb.R;
 import br.com.atualidadesweb.domain.News;
 import br.com.atualidadesweb.injection.InjectedTestRunner;
+import br.com.atualidadesweb.injection.TestGuiceModule;
 import br.com.atualidadesweb.services.NewsService;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -25,6 +27,14 @@ public class TimeLineActivityTest {
     @Before
     public void setUp() {
         initMocks(this);
+        TestGuiceModule module = new TestGuiceModule();
+        module.addBinding(NewsService.class, newsServiceMock);
+        TestGuiceModule.setUp(this, module);
+    }
+
+    @After
+    public void tearDown() {
+        TestGuiceModule.tearDown();
     }
 
     @Test
@@ -32,7 +42,6 @@ public class TimeLineActivityTest {
         when(this.newsServiceMock.getNews()).thenReturn(Arrays.asList(new News()));
 
         this.timeLineActivity = new TimeLineActivity();
-        this.timeLineActivity.newsService = this.newsServiceMock;
         this.timeLineActivity.onCreate(null);
 
         ListView listView = (ListView) this.timeLineActivity.findViewById(R.id.news);
