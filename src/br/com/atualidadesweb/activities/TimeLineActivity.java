@@ -18,7 +18,7 @@ import java.util.List;
 @ContentView(R.layout.main)
 public class TimeLineActivity extends RoboActivity {
 
-    @Inject private NewsService newsService;
+    @Inject protected NewsService newsService;
     @InjectView(R.id.news) private ListView listView;
 
     private List<String> items = new ArrayList<String>();
@@ -28,13 +28,10 @@ public class TimeLineActivity extends RoboActivity {
         super.onCreate(savedInstanceState);
 
         this.listView.setAdapter(this.createAdapter());
-        this.items.add("");
-        /*
         List<News> news = this.newsService.getNews();
         for (News aNews: news) {
             this.items.add(aNews.getTitle());
         }
-        */
     }
 
     private BaseAdapter createAdapter() {
